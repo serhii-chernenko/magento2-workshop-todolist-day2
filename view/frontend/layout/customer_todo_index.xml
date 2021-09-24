@@ -1,0 +1,51 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      layout="1column"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block template="Inevix_Todo::list.phtml">
+                <arguments>
+                    <argument name="jsLayout" xsi:type="array">
+                        <item name="components" xsi:type="array">
+                            <item name="todo" xsi:type="array">
+                                <item name="component" xsi:type="string">uiCollection</item>
+                                <item name="children" xsi:type="array">
+                                    <item name="form" xsi:type="array">
+                                        <item name="component" xsi:type="string">Inevix_Todo/js/view/form</item>
+                                        <item name="template" xsi:type="string">Inevix_Todo/form</item>
+                                        <item name="children" xsi:type="array">
+                                            <item name="input" xsi:type="array">
+                                                <item name="component" xsi:type="string">Magento_Ui/js/form/element/abstract</item>
+                                                <item name="template" xsi:type="string">ui/form/field</item>
+                                                <item name="displayArea" xsi:type="string">fieldset</item>
+                                                <item name="provider" xsi:type="string"><![CDATA[${ $.parentName }]]></item>
+                                                <item name="label" xsi:type="string" translate="true">Enter your action</item>
+                                                <item name="placeholder" xsi:type="string" translate="true">Enter your action</item>
+                                                <item name="validation" xsi:type="array">
+                                                    <item name="required-entry" xsi:type="boolean">true</item>
+                                                    <item name="min_text_length" xsi:type="number">4</item>
+                                                </item>
+                                                <item name="exports" xsi:type="array">
+                                                    <item name="value" xsi:type="string"><![CDATA[${ $.provider }:textInput]]></item>
+                                                    <item name="error" xsi:type="string"><![CDATA[${ $.provider }:error]]></item>
+                                                </item>
+                                            </item>
+                                        </item>
+                                    </item>
+                                    <item name="list" xsi:type="array">
+                                        <item name="component" xsi:type="string">Inevix_Todo/js/view/list</item>
+                                        <item name="template" xsi:type="string">Inevix_Todo/list</item>
+                                        <item name="configChild" xsi:type="array">
+                                            <item name="component" xsi:type="string">Inevix_Todo/js/view/item</item>
+                                            <item name="template" xsi:type="string">Inevix_Todo/item</item>
+                                        </item>
+                                    </item>
+                                </item>
+                            </item>
+                        </item>
+                    </argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

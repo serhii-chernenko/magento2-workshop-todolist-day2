@@ -1,0 +1,10 @@
+<form data-bind="submit: submit">
+    <fieldset class="fieldset">
+        <!-- ko foreach: { data: getRegion('fieldset'), as: 'element' } -->
+            <!-- ko template: getTemplate() --><!-- /ko -->
+        <!-- /ko -->
+    </fieldset>
+    <button class="action primary">
+        <span data-bind="i18n: 'Add'"/>
+    </button>
+</form>
